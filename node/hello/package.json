@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Um projeto simples para aprendermos sobre nodejs",
   "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts": {clear
+    "test": "mocha"
   },
   "keywords": [
     "nodejs",
@@ -16,5 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.1"
   }
 }
