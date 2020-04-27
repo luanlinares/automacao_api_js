@@ -15,9 +15,9 @@ describe('get', () => {
     context('quando eu tenho tarefas cadastradas', () => {
         before((done) => {
             let tasks = [
-                { title: 'Estudar NodeJs', email: 'luanlnrs@gmail.com', done: false },
-                { title: 'Fazer Compras', email: 'luanlnrs@gmail.com', done: false },
-                { title: 'Estudar MongoDB', email: 'luanlnrs@gmail.com', done: true }
+                { title: 'Estudar NodeJs', owner: 'luanlnrs@gmail.com', done: false },
+                { title: 'Fazer Compras', owner: 'luanlnrs@gmail.com', done: false },
+                { title: 'Estudar MongoDB', owner: 'luanlnrs@gmail.com', done: true }
             ]
 
             tasksModel.insertMany(tasks);
@@ -54,7 +54,7 @@ describe('get', () => {
 
         it('deve retornar uma única tarefa', (done) => {
             let tasks = [
-                { title: 'Ler um livro de javascript', email: 'luanlnrs@gmail.com', done: false },
+                { title: 'Ler um livro de javascript', owner: 'luanlnrs@gmail.com', done: false },
             ]
 
             tasksModel.insertMany(tasks, (err, result) => {

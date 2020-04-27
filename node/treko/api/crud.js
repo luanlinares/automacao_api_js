@@ -2,7 +2,13 @@ import Task from './models/task';
 
 import { publishToQueue } from './mqservice';
 
-const defaultQueue = "tasks";
+var defaultQueue;
+
+if (process.env.NODE_ENV == 'dev')
+    defaultQueue = 'tasksdev'
+
+else
+    defaultQueue = 'tasks'
 
 export default {
     create: (req, res) => {
@@ -12,13 +18,17 @@ export default {
         task.save((err, data) => {
             if (!err) {
                 // console.log(msg)
-                let msg = { html: `<h1>Ninja Tasks:</h1><p>Tarefa ${task.title} criada com sucesso!</p>`, email: task.owner }
+                let msg = { html: `<h1>Treko:</h1><p> Tarefa ${task.title} criada com sucesso!</p>`, email: task.owner }
                 publishToQueue(defaultQueue, JSON.stringify(msg));
                 return res.status(200).json({ data: data })
             }
 
             if (err.name === "ValidationError") {
                 return res.status(400).json(err)
+            }
+
+            if (err.name === "MongoError") {
+                return res.status(409).json(err)
             }
 
             return res.status(500).json(err)
