@@ -1,24 +1,24 @@
 {
   "stats": {
     "suites": 14,
-    "tests": 13,
-    "passes": 13,
+    "tests": 10,
+    "passes": 3,
     "pending": 0,
-    "failures": 0,
-    "start": "2020-04-27T04:20:44.101Z",
-    "end": "2020-04-27T04:20:44.403Z",
-    "duration": 302,
+    "failures": 7,
+    "start": "2020-04-27T17:59:22.189Z",
+    "end": "2020-04-27T17:59:40.924Z",
+    "duration": 18735,
     "testsRegistered": 13,
-    "passPercent": 100,
+    "passPercent": 23.076923076923077,
     "pendingPercent": 0,
-    "other": 0,
-    "hasOther": false,
-    "skipped": 0,
-    "hasSkipped": false
+    "other": 3,
+    "hasOther": true,
+    "skipped": 3,
+    "hasSkipped": true
   },
   "results": [
     {
-      "uuid": "4a5819fe-8da4-4f10-aa4b-e867ab02e3a0",
+      "uuid": "520c331b-6b25-4655-8d7a-5b81dc13959c",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,18 +27,18 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b85c3121-ece7-47f1-a594-4a22a671805a",
+          "uuid": "79565fcd-d6bd-4dfd-b836-5dd69a866c79",
           "title": "delete",
-          "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\delete.spec.js",
+          "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\delete.spec.js",
           "file": "\\test\\delete.spec.js",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [],
           "suites": [
             {
-              "uuid": "51e0d983-e1c4-4b41-bcfc-1c9f8dc63a3c",
+              "uuid": "a3109620-351f-48ad-9725-725d9f2b2a0a",
               "title": "quando apago uma tarefa",
-              "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\delete.spec.js",
+              "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\delete.spec.js",
               "file": "\\test\\delete.spec.js",
               "beforeHooks": [
                 {
@@ -54,28 +54,32 @@
                   "context": null,
                   "code": "_task2.default.insertMany([task]);\ndone();",
                   "err": {},
-                  "uuid": "9761fdd9-75b2-4d2e-9e64-b54cd8e234c5",
-                  "parentUUID": "51e0d983-e1c4-4b41-bcfc-1c9f8dc63a3c",
+                  "uuid": "1c8c972d-e80d-4644-9cb0-81278fb117bf",
+                  "parentUUID": "a3109620-351f-48ad-9725-725d9f2b2a0a",
                   "isHook": true,
                   "skipped": false
                 }
               ],
               "afterHooks": [
                 {
-                  "title": "\"after all\" hook",
-                  "fullTitle": "delete quando apago uma tarefa \"after all\" hook",
-                  "timedOut": false,
-                  "duration": 12,
-                  "state": null,
+                  "title": "\"after all\" hook for \"deve retornar 200\"",
+                  "fullTitle": "delete quando apago uma tarefa \"after all\" hook for \"deve retornar 200\"",
+                  "timedOut": true,
+                  "duration": 2001,
+                  "state": "failed",
                   "speed": null,
                   "pass": false,
-                  "fail": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "request.get('/task/' + task._id).end(function (err, res) {\n    expect(res).to.has.status(404);\n    done();\n});",
-                  "err": {},
-                  "uuid": "87682e11-5b19-4678-87e9-ea20cf8f14a9",
-                  "parentUUID": "51e0d983-e1c4-4b41-bcfc-1c9f8dc63a3c",
+                  "err": {
+                    "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\delete.spec.js)",
+                    "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\delete.spec.js)",
+                    "diff": null
+                  },
+                  "uuid": "ca99768f-421a-4155-89a0-87d447c1fa97",
+                  "parentUUID": "a3109620-351f-48ad-9725-725d9f2b2a0a",
                   "isHook": true,
                   "skipped": false
                 }
@@ -84,38 +88,42 @@
                 {
                   "title": "deve retornar 200",
                   "fullTitle": "delete quando apago uma tarefa deve retornar 200",
-                  "timedOut": false,
-                  "duration": 27,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
+                  "timedOut": true,
+                  "duration": 2002,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "request.delete('/task/' + task._id).end(function (err, res) {\n    expect(res).to.have.status(200);\n    expect(res.body).to.eql({});\n    done();\n});",
-                  "err": {},
-                  "uuid": "3de30ab4-1c5c-4ea0-8ee4-ffe1519156de",
-                  "parentUUID": "51e0d983-e1c4-4b41-bcfc-1c9f8dc63a3c",
+                  "err": {
+                    "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\delete.spec.js)",
+                    "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\delete.spec.js)",
+                    "diff": null
+                  },
+                  "uuid": "d4910336-f2da-4375-9950-adb7df625e6f",
+                  "parentUUID": "a3109620-351f-48ad-9725-725d9f2b2a0a",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
-              "passes": [
-                "3de30ab4-1c5c-4ea0-8ee4-ffe1519156de"
+              "passes": [],
+              "failures": [
+                "d4910336-f2da-4375-9950-adb7df625e6f"
               ],
-              "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 27,
+              "duration": 2002,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "b0bcb155-53be-45ab-b7c4-555bc9518fd0",
+              "uuid": "deab8d58-5815-4d26-bf8f-ff115efd1e65",
               "title": "deletar tarefa inexistente",
-              "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\delete.spec.js",
+              "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\delete.spec.js",
               "file": "\\test\\delete.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -124,7 +132,7 @@
                   "title": "deve retornar 404",
                   "fullTitle": "delete deletar tarefa inexistente deve retornar 404",
                   "timedOut": false,
-                  "duration": 11,
+                  "duration": 16,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -133,20 +141,20 @@
                   "context": null,
                   "code": "var id = require('mongoose').Types.ObjectId();\nrequest.delete('/task/' + _task2.default._id).end(function (err, res) {\n    expect(res).to.have.status(404);\n    expect(res.body).to.eql({});\n    done();\n});",
                   "err": {},
-                  "uuid": "62dd9503-6952-460f-ab2d-8f514b438aa3",
-                  "parentUUID": "b0bcb155-53be-45ab-b7c4-555bc9518fd0",
+                  "uuid": "433b972c-8824-4300-bdda-6b98195eadcc",
+                  "parentUUID": "deab8d58-5815-4d26-bf8f-ff115efd1e65",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "62dd9503-6952-460f-ab2d-8f514b438aa3"
+                "433b972c-8824-4300-bdda-6b98195eadcc"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 11,
+              "duration": 16,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -162,25 +170,25 @@
           "_timeout": 2000
         },
         {
-          "uuid": "1a7d9728-4000-4089-9f65-cf4f9b317fb7",
+          "uuid": "26c57ba8-7b5b-42f6-b5f7-861da94e79a7",
           "title": "get",
-          "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js",
+          "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js",
           "file": "\\test\\get.spec.js",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [],
           "suites": [
             {
-              "uuid": "4447b1c7-605d-4264-b3fd-2a4e5b348d9e",
+              "uuid": "35f98f3d-830c-41de-baab-eb7bfbc47bee",
               "title": "quando eu tenho tarefas cadastradas",
-              "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js",
+              "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js",
               "file": "\\test\\get.spec.js",
               "beforeHooks": [
                 {
                   "title": "\"before all\" hook",
                   "fullTitle": "get quando eu tenho tarefas cadastradas \"before all\" hook",
                   "timedOut": false,
-                  "duration": 1,
+                  "duration": 0,
                   "state": null,
                   "speed": null,
                   "pass": false,
@@ -189,8 +197,8 @@
                   "context": null,
                   "code": "var tasks = [{ title: 'Estudar NodeJs', owner: 'luanlnrs@gmail.com', done: false }, { title: 'Fazer Compras', owner: 'luanlnrs@gmail.com', done: false }, { title: 'Estudar MongoDB', owner: 'luanlnrs@gmail.com', done: true }];\n_task2.default.insertMany(tasks);\ndone();",
                   "err": {},
-                  "uuid": "16431503-160e-4d3e-a7f9-7fee8641e645",
-                  "parentUUID": "4447b1c7-605d-4264-b3fd-2a4e5b348d9e",
+                  "uuid": "9d0008e9-2538-40ed-9a8a-d6db919b0b6a",
+                  "parentUUID": "35f98f3d-830c-41de-baab-eb7bfbc47bee",
                   "isHook": true,
                   "skipped": false
                 }
@@ -200,57 +208,65 @@
                 {
                   "title": "deve retornar uma lista",
                   "fullTitle": "get quando eu tenho tarefas cadastradas deve retornar uma lista",
-                  "timedOut": false,
-                  "duration": 7,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
+                  "timedOut": true,
+                  "duration": 2000,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "request.get('/task').end(function (err, res) {\n    expect(res).to.has.status(200);\n    //console.log(typeof res.body.data);\n    expect(res.body.data).to.be.an('array');\n    done();\n});",
-                  "err": {},
-                  "uuid": "7d88002a-9356-4d7e-a605-05324dca47bc",
-                  "parentUUID": "4447b1c7-605d-4264-b3fd-2a4e5b348d9e",
+                  "err": {
+                    "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js)",
+                    "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js)",
+                    "diff": null
+                  },
+                  "uuid": "c9196439-36eb-46db-9cdd-e55f51747f96",
+                  "parentUUID": "35f98f3d-830c-41de-baab-eb7bfbc47bee",
                   "isHook": false,
                   "skipped": false
                 },
                 {
                   "title": "deve filtrar por palavra chave",
                   "fullTitle": "get quando eu tenho tarefas cadastradas deve filtrar por palavra chave",
-                  "timedOut": false,
-                  "duration": 8,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
+                  "timedOut": true,
+                  "duration": 2000,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "request.get('/task').query({ title: 'Estudar' }).end(function (err, res) {\n    expect(res).to.has.status(200);\n    expect(res.body.data[0].title).to.equal('Estudar NodeJs');\n    expect(res.body.data[1].title).to.equal('Estudar MongoDB');\n    done();\n});",
-                  "err": {},
-                  "uuid": "1cf7aef1-4a65-40b0-9059-e5b79ae10013",
-                  "parentUUID": "4447b1c7-605d-4264-b3fd-2a4e5b348d9e",
+                  "err": {
+                    "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js)",
+                    "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js)",
+                    "diff": null
+                  },
+                  "uuid": "f9b34d05-6005-4427-99d8-c95a90af288b",
+                  "parentUUID": "35f98f3d-830c-41de-baab-eb7bfbc47bee",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
-              "passes": [
-                "7d88002a-9356-4d7e-a605-05324dca47bc",
-                "1cf7aef1-4a65-40b0-9059-e5b79ae10013"
+              "passes": [],
+              "failures": [
+                "c9196439-36eb-46db-9cdd-e55f51747f96",
+                "f9b34d05-6005-4427-99d8-c95a90af288b"
               ],
-              "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 15,
+              "duration": 4000,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "28a6db6e-c173-4d2c-9557-9cb55556d967",
+              "uuid": "872b6b91-c09c-42eb-834e-361178033e4b",
               "title": "quando busco por id",
-              "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js",
+              "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js",
               "file": "\\test\\get.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -258,38 +274,42 @@
                 {
                   "title": "deve retornar uma única tarefa",
                   "fullTitle": "get quando busco por id deve retornar uma única tarefa",
-                  "timedOut": false,
-                  "duration": 5,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
+                  "timedOut": true,
+                  "duration": 2001,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "var tasks = [{ title: 'Ler um livro de javascript', owner: 'luanlnrs@gmail.com', done: false }];\n_task2.default.insertMany(tasks, function (err, result) {\n    var id = result[0]._id;\n    request.get('/task/' + id).end(function (err, res) {\n        expect(res).to.has.status(200);\n        //expect(res.body.data.title).to.equal('Ler um livro de javascript')\n        //Outra forma de validar usando a própria massa de testes\n        expect(res.body.data.title).to.equal(tasks[0].title);\n        done();\n    });\n});",
-                  "err": {},
-                  "uuid": "52d1e0f4-dbd1-4168-9129-260c5ee7da07",
-                  "parentUUID": "28a6db6e-c173-4d2c-9557-9cb55556d967",
+                  "err": {
+                    "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js)",
+                    "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js)",
+                    "diff": null
+                  },
+                  "uuid": "7c4a62eb-751b-4167-be2d-c4e0be63b81a",
+                  "parentUUID": "872b6b91-c09c-42eb-834e-361178033e4b",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
-              "passes": [
-                "52d1e0f4-dbd1-4168-9129-260c5ee7da07"
+              "passes": [],
+              "failures": [
+                "7c4a62eb-751b-4167-be2d-c4e0be63b81a"
               ],
-              "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 5,
+              "duration": 2001,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "fae4fadc-681b-44ae-a1d2-82dcac2aba3f",
+              "uuid": "65a4e0ee-b2ea-421e-9ff5-a3ffd3473fc1",
               "title": "quando o id não existe",
-              "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js",
+              "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js",
               "file": "\\test\\get.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -297,30 +317,34 @@
                 {
                   "title": "deve retornar erro 404 - not found ",
                   "fullTitle": "get quando o id não existe deve retornar erro 404 - not found ",
-                  "timedOut": false,
-                  "duration": 4,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
+                  "timedOut": true,
+                  "duration": 2001,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "var id = require('mongoose').Types.ObjectId();\nrequest.get('/task/' + id).end(function (err, res) {\n    expect(res).to.has.status(404);\n    expect(res.body).to.eql({});\n    done();\n});",
-                  "err": {},
-                  "uuid": "1df95b26-198d-463a-8876-cdf65a8630d2",
-                  "parentUUID": "fae4fadc-681b-44ae-a1d2-82dcac2aba3f",
+                  "err": {
+                    "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js)",
+                    "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\get.spec.js)",
+                    "diff": null
+                  },
+                  "uuid": "7a02bd52-a662-4c21-b775-9308e9b23d7d",
+                  "parentUUID": "65a4e0ee-b2ea-421e-9ff5-a3ffd3473fc1",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
-              "passes": [
-                "1df95b26-198d-463a-8876-cdf65a8630d2"
+              "passes": [],
+              "failures": [
+                "7a02bd52-a662-4c21-b775-9308e9b23d7d"
               ],
-              "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 4,
+              "duration": 2001,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -336,35 +360,39 @@
           "_timeout": 2000
         },
         {
-          "uuid": "5749b628-656c-48aa-a529-43c2f197ffed",
+          "uuid": "afdec931-cda1-4c4f-8dcb-278a6a092e12",
           "title": "post",
-          "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\post.spec.js",
+          "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\post.spec.js",
           "file": "\\test\\post.spec.js",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [],
           "suites": [
             {
-              "uuid": "9ac23e23-334e-4a6f-a188-221625153b02",
+              "uuid": "73c918ab-89f0-45d0-9032-b2c582001d9c",
               "title": "quando eu cadastro uma tarefa",
-              "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\post.spec.js",
+              "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\post.spec.js",
               "file": "\\test\\post.spec.js",
               "beforeHooks": [
                 {
-                  "title": "\"before all\" hook",
-                  "fullTitle": "post quando eu cadastro uma tarefa \"before all\" hook",
-                  "timedOut": false,
-                  "duration": 13,
-                  "state": null,
+                  "title": "\"before all\" hook for \"deve retornar 200 - cadastro com sucesso\"",
+                  "fullTitle": "post quando eu cadastro uma tarefa \"before all\" hook for \"deve retornar 200 - cadastro com sucesso\"",
+                  "timedOut": true,
+                  "duration": 2001,
+                  "state": "failed",
                   "speed": null,
                   "pass": false,
-                  "fail": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "rabbit.delete('/api/queues/%2F/tasksdev/contents').auth('guest', 'guest').end(function (err, res) {\n    expect(res).to.has.status(204);\n    done();\n});",
-                  "err": {},
-                  "uuid": "138d3837-a898-42dc-ad30-a13a284a82cf",
-                  "parentUUID": "9ac23e23-334e-4a6f-a188-221625153b02",
+                  "err": {
+                    "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\post.spec.js)",
+                    "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\post.spec.js)",
+                    "diff": null
+                  },
+                  "uuid": "db6a087d-abeb-4893-856f-e8d26645118a",
+                  "parentUUID": "73c918ab-89f0-45d0-9032-b2c582001d9c",
                   "isHook": true,
                   "skipped": false
                 }
@@ -375,56 +403,56 @@
                   "title": "deve retornar 200 - cadastro com sucesso",
                   "fullTitle": "post quando eu cadastro uma tarefa deve retornar 200 - cadastro com sucesso",
                   "timedOut": false,
-                  "duration": 20,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
+                  "duration": 0,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
                   "fail": false,
                   "pending": false,
                   "context": null,
                   "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(200);\n    expect(res.body.data.title).to.be.an('string');\n    expect(res.body.data.owner).to.be.an('string');\n    expect(res.body.data.done).to.be.an('boolean');\n    done();\n});",
                   "err": {},
-                  "uuid": "f194284b-5cb7-4d3b-9181-1afeb942a72b",
-                  "parentUUID": "9ac23e23-334e-4a6f-a188-221625153b02",
+                  "uuid": "664530de-783e-4f45-b719-8f0f3b104822",
+                  "parentUUID": "73c918ab-89f0-45d0-9032-b2c582001d9c",
                   "isHook": false,
-                  "skipped": false
+                  "skipped": true
                 },
                 {
                   "title": "e deve enviar um email",
                   "fullTitle": "post quando eu cadastro uma tarefa e deve enviar um email",
                   "timedOut": false,
-                  "duration": 20,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
+                  "duration": 0,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
                   "fail": false,
                   "pending": false,
                   "context": null,
                   "code": "var payload = { vhost: '/', name: 'tasksdev', truncate: '50000', ackmode: 'ack_requeue_true', encoding: 'auto', count: '1' };\n            rabbit.post('/api/queues/%2F/tasksdev/get').auth('guest', 'guest').send(payload).end(function (err, res) {\n                expect(res).to.has.status(200);\n                expect(res.body[0].payload).to.contain('Tarefa ' + task.title + ' criada com sucesso!');\n                done();\n            });",
                   "err": {},
-                  "uuid": "e9018000-e4d9-4a99-a678-c1e7ee67a13f",
-                  "parentUUID": "9ac23e23-334e-4a6f-a188-221625153b02",
+                  "uuid": "c1378ed8-5479-4c92-8061-87e0c2ed2b64",
+                  "parentUUID": "73c918ab-89f0-45d0-9032-b2c582001d9c",
                   "isHook": false,
-                  "skipped": false
+                  "skipped": true
                 }
               ],
               "suites": [],
-              "passes": [
-                "f194284b-5cb7-4d3b-9181-1afeb942a72b",
-                "e9018000-e4d9-4a99-a678-c1e7ee67a13f"
-              ],
+              "passes": [],
               "failures": [],
               "pending": [],
-              "skipped": [],
-              "duration": 40,
+              "skipped": [
+                "664530de-783e-4f45-b719-8f0f3b104822",
+                "c1378ed8-5479-4c92-8061-87e0c2ed2b64"
+              ],
+              "duration": 0,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "aa76f814-8da5-4353-8efc-b2610c43eeba",
+              "uuid": "55268513-c19b-4f6d-b864-781e7fb4be01",
               "title": "quando não informo o titulo",
-              "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\post.spec.js",
+              "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\post.spec.js",
               "file": "\\test\\post.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -433,37 +461,37 @@
                   "title": "deve retornar 400 - Not Found",
                   "fullTitle": "post quando não informo o titulo deve retornar 400 - Not Found",
                   "timedOut": false,
-                  "duration": 3,
+                  "duration": 39,
                   "state": "passed",
-                  "speed": "fast",
+                  "speed": "medium",
                   "pass": true,
                   "fail": false,
                   "pending": false,
                   "context": null,
                   "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(400);\n    expect(res.body.errors.title.message).to.eql('Título é obrigatório!');\n    done();\n});",
                   "err": {},
-                  "uuid": "bd116d21-493d-4a11-a87c-e84ed8da88ff",
-                  "parentUUID": "aa76f814-8da5-4353-8efc-b2610c43eeba",
+                  "uuid": "11c837d8-8f0c-48f2-92cd-2725942f3741",
+                  "parentUUID": "55268513-c19b-4f6d-b864-781e7fb4be01",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "bd116d21-493d-4a11-a87c-e84ed8da88ff"
+                "11c837d8-8f0c-48f2-92cd-2725942f3741"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 3,
+              "duration": 39,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "5ac0735d-70cf-4a02-945c-f419f574478d",
+              "uuid": "41a7f243-eef8-4f85-a297-1b38a046b4ce",
               "title": "quando não informo o owner",
-              "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\post.spec.js",
+              "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\post.spec.js",
               "file": "\\test\\post.spec.js",
               "beforeHooks": [],
               "afterHooks": [],
@@ -472,7 +500,7 @@
                   "title": "deve retornar 400 - Bad Request",
                   "fullTitle": "post quando não informo o owner deve retornar 400 - Bad Request",
                   "timedOut": false,
-                  "duration": 2,
+                  "duration": 6,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -481,45 +509,49 @@
                   "context": null,
                   "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(400);\n    expect(res.body.errors.owner.message).to.eql('Dono da tarefa é obrigatório!');\n    done();\n});",
                   "err": {},
-                  "uuid": "f53ca4e9-2f22-4a8c-ab37-3fb692002b74",
-                  "parentUUID": "5ac0735d-70cf-4a02-945c-f419f574478d",
+                  "uuid": "0f52e59f-0573-4e5f-847d-f67d1f8d8094",
+                  "parentUUID": "41a7f243-eef8-4f85-a297-1b38a046b4ce",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "f53ca4e9-2f22-4a8c-ab37-3fb692002b74"
+                "0f52e59f-0573-4e5f-847d-f67d1f8d8094"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 2,
+              "duration": 6,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             },
             {
-              "uuid": "34d823f5-0335-4f64-8dbf-d11bf0c94ceb",
+              "uuid": "f4a69a40-6ad2-4cfa-a88f-2ad79488b515",
               "title": "quando a tarefa já existe",
-              "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\post.spec.js",
+              "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\post.spec.js",
               "file": "\\test\\post.spec.js",
               "beforeHooks": [
                 {
-                  "title": "\"before all\" hook",
-                  "fullTitle": "post quando a tarefa já existe \"before all\" hook",
+                  "title": "\"before all\" hook for \"deve retornar 409 - Chave Duplicada\"",
+                  "fullTitle": "post quando a tarefa já existe \"before all\" hook for \"deve retornar 409 - Chave Duplicada\"",
                   "timedOut": false,
-                  "duration": 4,
-                  "state": null,
+                  "duration": 589,
+                  "state": "failed",
                   "speed": null,
                   "pass": false,
-                  "fail": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(200);\n    done();\n});",
-                  "err": {},
-                  "uuid": "ad9e4c3c-9ef7-4bc6-889a-9e1b01c65374",
-                  "parentUUID": "34d823f5-0335-4f64-8dbf-d11bf0c94ceb",
+                  "err": {
+                    "message": "TypeError: Cannot use 'in' operator to search for 'status' in undefined",
+                    "estack": "TypeError: Cannot use 'in' operator to search for 'status' in undefined\n    at Proxy.<anonymous> (node_modules\\chai-http\\lib\\http.js:80:38)\n    at Proxy.methodWrapper (node_modules\\chai\\lib\\chai\\utils\\addMethod.js:57:25)\n    at C:/Users/luan.linares/Documents/Projetos/automacao_api_js/node/treko/api/test/post.spec.js:25:40\n    at Test.Request.callback (node_modules\\superagent\\lib\\node\\index.js:728:3)\n    at ClientRequest.req.once.err (node_modules\\superagent\\lib\\node\\index.js:647:10)\n    at Socket.socketErrorListener (_http_client.js:387:9)\n    at emitErrorNT (internal/streams/destroy.js:66:8)\n    at _combinedTickCallback (internal/process/next_tick.js:139:11)\n    at process._tickCallback (internal/process/next_tick.js:181:9)",
+                    "diff": null
+                  },
+                  "uuid": "1d9011d5-1af2-4d87-ab8d-1df85c1b44b4",
+                  "parentUUID": "f4a69a40-6ad2-4cfa-a88f-2ad79488b515",
                   "isHook": true,
                   "skipped": false
                 }
@@ -530,29 +562,29 @@
                   "title": "deve retornar 409 - Chave Duplicada",
                   "fullTitle": "post quando a tarefa já existe deve retornar 409 - Chave Duplicada",
                   "timedOut": false,
-                  "duration": 10,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
+                  "duration": 0,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
                   "fail": false,
                   "pending": false,
                   "context": null,
                   "code": "request.post('/task').send(task).end(function (err, res) {\n    expect(res).to.has.status(409);\n    expect(res.body.errmsg).to.include('duplicate key');\n    done();\n});",
                   "err": {},
-                  "uuid": "60b512b6-1990-4bd0-b820-7a9b22b21552",
-                  "parentUUID": "34d823f5-0335-4f64-8dbf-d11bf0c94ceb",
+                  "uuid": "bbb94c31-975e-4e37-9651-266ca84384e7",
+                  "parentUUID": "f4a69a40-6ad2-4cfa-a88f-2ad79488b515",
                   "isHook": false,
-                  "skipped": false
+                  "skipped": true
                 }
               ],
               "suites": [],
-              "passes": [
-                "60b512b6-1990-4bd0-b820-7a9b22b21552"
-              ],
+              "passes": [],
               "failures": [],
               "pending": [],
-              "skipped": [],
-              "duration": 10,
+              "skipped": [
+                "bbb94c31-975e-4e37-9651-266ca84384e7"
+              ],
+              "duration": 0,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
@@ -568,18 +600,18 @@
           "_timeout": 2000
         },
         {
-          "uuid": "6c2abb54-6ebc-4160-a28e-800aebc26356",
+          "uuid": "6e201ed5-0c97-4fcb-9c04-5e3ddc40d46a",
           "title": "put",
-          "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\put.spec.js",
+          "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\put.spec.js",
           "file": "\\test\\put.spec.js",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [],
           "suites": [
             {
-              "uuid": "0b203725-f4d3-44e9-96f0-b09e9d78da92",
+              "uuid": "57f2a773-0d61-4ead-8e82-997fdc4a9050",
               "title": "quando eu altero uma tarefa",
-              "fullFile": "C:\\Users\\luanl\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\put.spec.js",
+              "fullFile": "C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\put.spec.js",
               "file": "\\test\\put.spec.js",
               "beforeHooks": [
                 {
@@ -595,8 +627,8 @@
                   "context": null,
                   "code": "_task2.default.insertMany([task]);\ndone();",
                   "err": {},
-                  "uuid": "97e3ef55-e539-4ae6-8703-2c2fd28bcd44",
-                  "parentUUID": "0b203725-f4d3-44e9-96f0-b09e9d78da92",
+                  "uuid": "f4e07ccd-ea99-48da-8fc3-8cf07d674199",
+                  "parentUUID": "57f2a773-0d61-4ead-8e82-997fdc4a9050",
                   "isHook": true,
                   "skipped": false
                 }
@@ -606,49 +638,57 @@
                 {
                   "title": "deve retornar 200",
                   "fullTitle": "put quando eu altero uma tarefa deve retornar 200",
-                  "timedOut": false,
-                  "duration": 12,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
+                  "timedOut": true,
+                  "duration": 2001,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "task.title = 'Lavar Roupas', task.done = true;\nrequest.put('/task/' + task._id).send(task).end(function (err, res) {\n    expect(res).to.has.status(200);\n    expect(res.body).to.eql({});\n    done();\n});",
-                  "err": {},
-                  "uuid": "b7624d69-01ae-4012-806d-d48df5e3ac5e",
-                  "parentUUID": "0b203725-f4d3-44e9-96f0-b09e9d78da92",
+                  "err": {
+                    "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\put.spec.js)",
+                    "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\put.spec.js)",
+                    "diff": null
+                  },
+                  "uuid": "7429c09c-4144-41fa-99ae-e7c741bf8df5",
+                  "parentUUID": "57f2a773-0d61-4ead-8e82-997fdc4a9050",
                   "isHook": false,
                   "skipped": false
                 },
                 {
                   "title": "deve retornar os dados atualizados",
                   "fullTitle": "put quando eu altero uma tarefa deve retornar os dados atualizados",
-                  "timedOut": false,
-                  "duration": 11,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
+                  "timedOut": true,
+                  "duration": 1999,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "request.get('/task/' + task._id).end(function (err, res) {\n    expect(res).to.have.status(200);\n    expect(res.body.data.title).to.eql(task.title);\n    expect(res.body.data.done).to.be.true;\n    done();\n});",
-                  "err": {},
-                  "uuid": "8a93df6d-ba57-484a-8508-a0f0cfd11de7",
-                  "parentUUID": "0b203725-f4d3-44e9-96f0-b09e9d78da92",
+                  "err": {
+                    "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\put.spec.js)",
+                    "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves. (C:\\Users\\luan.linares\\Documents\\Projetos\\automacao_api_js\\node\\treko\\api\\test\\put.spec.js)",
+                    "diff": null
+                  },
+                  "uuid": "9d664689-335e-45e3-88e7-b2992df2cc1b",
+                  "parentUUID": "57f2a773-0d61-4ead-8e82-997fdc4a9050",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
-              "passes": [
-                "b7624d69-01ae-4012-806d-d48df5e3ac5e",
-                "8a93df6d-ba57-484a-8508-a0f0cfd11de7"
+              "passes": [],
+              "failures": [
+                "7429c09c-4144-41fa-99ae-e7c741bf8df5",
+                "9d664689-335e-45e3-88e7-b2992df2cc1b"
               ],
-              "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 23,
+              "duration": 4000,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
